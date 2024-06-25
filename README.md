@@ -1,3 +1,17 @@
+# Quick Introduction to the MarkBuilder:
+
+My friend, Mark, often laments that the random teammates he is paired with aren't using optimal loadouts. This spawned the joke of "Don't let Mark control your builds!" 
+
+The purpose of this project is to do exactly that, let Mark control your builds. 
+
+By authenticating using the Bungie.net API, you will be able to copy builds that Mark suggests, or simply allow your loadout to mimic Mark's (as closely as possible).
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
