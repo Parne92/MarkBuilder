@@ -2,11 +2,16 @@ import './App.css';
 
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+
+import About from "./component/about";
+import Current from "./component/current";
+import Suggested from "./component/suggested";
 
 const navigation = [
   { name: 'Mark\'s Current Builds', href: '#', current: true },
   { name: 'Mark\'s Suggested Builds', href: '#', current: false },
-  { name: 'About', href: '#', current: false },
+  { name: 'About', LinkTo: '/about', current: false },
 ]
 
 function classNames(...classes) {
@@ -15,6 +20,7 @@ function classNames(...classes) {
 
 export default function App() {
   return (
+  <Router>
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
@@ -115,6 +121,21 @@ export default function App() {
             </div>
           </div>
 
+          <Routes>
+            <Route 
+              path="/current"
+              element={<Current />}
+            ></Route>
+            <Route 
+              path="/about"
+              element={<About />}
+            ></Route>
+            <Route 
+              path="/suggested"
+              element={<Suggested />}
+            ></Route>
+          </Routes>
+
           <DisclosurePanel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
               {navigation.map((item) => (
@@ -136,5 +157,6 @@ export default function App() {
         </>
       )}
     </Disclosure>
+  </Router>
   )
 }
